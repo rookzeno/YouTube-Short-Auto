@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "YouTube Shorts Auto Play",
+    "version": "1.0",
+    "description": "YouTube ショート動画を自動で再生します。",
+    "permissions": [
+      "storage",
+      "scripting",
+      "activeTab"
+    ],
+    "host_permissions": [
+      "https://www.youtube.com/shorts/*"
+    ],
+    "content_scripts": [
+      {
+        "matches": [
+          "https://www.youtube.com/shorts/*"
+        ],
+        "js": [
+          "content.js"
+        ],
+        "run_at": "document_end"
+      }
+    ],
+    "action": {
+      "default_popup": "popup.html"
+    }
+  }
